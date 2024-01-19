@@ -1,0 +1,65 @@
+{
+	"name": "tailwindcss-center",
+	"version": "0.0.0",
+	"description": "A TailwindCSS plugin that adds centering utilities.",
+	"keywords": [
+		"tailwind",
+		"tailwindcss",
+		"tailwind-plugin",
+		"tailwindcss-plugin",
+		"tailwind-css-plugin",
+		"plugin",
+		"center"
+	],
+	"license": "MIT",
+	"repository": "tommy-mitchell/tailwindcss-center",
+	"author": {
+		"name": "Tommy Mitchell",
+		"url": "https://tommymitchell.io"
+	},
+	"type": "module",
+	"exports": {
+		"default": "./dist/index.js",
+		"types": "./dist/index.d.ts"
+	},
+	"files": [
+		"dist"
+	],
+	"engines": {
+		"node": "^18.18 || ^20.8 || ^21"
+	},
+	"scripts": {
+		"prepare": "npm run build",
+		"build": "tsc -p tsconfig.build.json",
+		"lint": "xo",
+		"format": "dprint fmt && xo --fix",
+		"test": "c8 npm run ava && tsc",
+		"ava": "cross-env NODE_OPTIONS='--loader=ts-node/esm --no-warnings=ExperimentalWarning' ava"
+	},
+	"ava": {
+		"files": [
+			"test/**/*.ts",
+			"!test/_*"
+		],
+		"extensions": {
+			"ts": "module"
+		}
+	},
+	"peerDependencies": {
+		"tailwindcss": ">=3.0.0"
+	},
+	"devDependencies": {
+		"@phaphoso/eslint-plugin-dprint": "^0.5.2",
+		"@tommy-mitchell/tsconfig": "^2.0.0",
+		"@types/node": "^18.18",
+		"ava": "^6.0.1",
+		"c8": "^9.1.0",
+		"cross-env": "^7.0.3",
+		"dprint": "^0.45.0",
+		"postcss": "^8.4.33",
+		"tailwindcss": "^3.4.1",
+		"ts-node": "^10.9.2",
+		"typescript": "~5.3.3",
+		"xo": "^0.56.0"
+	}
+}
