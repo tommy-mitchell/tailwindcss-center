@@ -1,6 +1,6 @@
 {
 	"name": "tailwindcss-center",
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"description": "A TailwindCSS plugin that adds centering utilities.",
 	"keywords": [
 		"tailwind",
