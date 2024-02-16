@@ -2,9 +2,6 @@
 
 A TailwindCSS plugin that adds centering utilities.
 
-> [!WARNING]
-> This plugin is ESM only.
-
 ## Install
 
 ```sh
@@ -34,6 +31,22 @@ export default {
 	],
 };
 ```
+
+<details>
+<summary>CommonJS Configs</summary>
+
+```ts
+module.exports = {
+	theme: {
+		// ...
+	},
+	plugins: [
+		require("tailwindcss-center"),
+	],
+};
+```
+
+</details>
 
 ## Usage
 
