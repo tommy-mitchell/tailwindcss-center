@@ -1,9 +1,6 @@
 {
-	"extends": "./tsconfig.json",
-	"include": ["src"],
+	"extends": "@tommy-mitchell/tsconfig",
 	"compilerOptions": {
-		"outDir": "dist",
-		"noEmit": false,
 		"removeComments": true
 	}
 }

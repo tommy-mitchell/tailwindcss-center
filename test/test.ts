@@ -1,7 +1,7 @@
 import { fileURLToPath } from "node:url";
 import test from "ava";
 import tailwind from "tailwindcss";
-import postcss from "postcss";
+import postcss, { type AcceptedPlugin } from "postcss";
 import tailwindPluginCenter from "../src/index.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -9,13 +9,9 @@ const __filename = fileURLToPath(import.meta.url);
 const validate = test.macro(async (t, input: string) => {
 	const output = await postcss([
 		tailwind({
-			content: [{
-				raw: input,
-			}],
-			plugins: [
-				tailwindPluginCenter,
-			],
-		}),
+			content: [{ raw: input }],
+			plugins: [tailwindPluginCenter],
+		}) as AcceptedPlugin,
 	]).process("@tailwind utilities", {
 		from: `${__filename}?test=${t.title}`,
 	});
